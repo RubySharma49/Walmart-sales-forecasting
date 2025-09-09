@@ -33,11 +33,11 @@ python scripts/final_evaluation.py --config configs/Params_set.yml
 python scripts/store_categorization.py --config configs/Params_set.yml
 
 ## Results
-![Forecast Example](reports/figures/forecast_example.png)
+Example results of store1 model:
 
 - Median RMSE (sample store): 38041
 - sMAPE: 12.3%
-- Best feature set:  Month_Start_Flag
+- Best feature set:  Month_Start_Flag with dollar impact of $91,008.453
 
 ## Data info
 - Dataset is not included in full. The complete dataset can be found here (https://www.kaggle.com/datasets/mikhail1681/walmart-sales).
