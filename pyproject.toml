@@ -1,0 +1,16 @@
+# pyproject.toml (put this at the project root)
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Walmart-sales-forecasting"     # distribution name (what pip installs)
+version = "0.0.1"                # your project version
+requires-python = ">=3.10"       # enforce a minimum Python version
+description = "Walmart weekly sales forecasting"
+readme = "README.md"
+
+# Tell setuptools where to discover your Python packages
+[tool.setuptools.packages.find]
+where = ["src"]

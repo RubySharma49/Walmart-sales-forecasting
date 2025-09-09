@@ -1,0 +1,15 @@
+# Core scientific stack
+numpy>=2.26
+pandas>=2.3.2
+matplotlib>=3.9.4
+
+# Forecasting / ML
+statsmodels>=0.14.5
+scikit-learn>=1.7.1
+pmdarima>=2.0
+prophet>=1.1   # optional, install via conda-forge if pip fails
+
+# Utilities
+pyyaml>=6.0
+joblib>=1.2
+fastparquet>=2024.11.0

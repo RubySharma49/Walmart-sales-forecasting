@@ -1,0 +1,55 @@
+data:
+  path_file: "data/walmart-sales-dataset-of-45stores.csv"
+  index_col: "Date"
+  target_var: "Weekly_Sales"
+
+
+cross_validation:
+  numeric_featres: ["y"]
+  binary_features: ["Holiday_Flag", 'Month_Start_Flag',
+                     'cal_thanksgiving_w0',
+                     'cal_christmas_w-1', 'cal_christmas_w0']
+
+  model_param: {'p': [0,1,2],
+                  'd': [0],
+                  'q': [0,1,2],
+                  'P': [0,1,2],
+                  'D': [1],
+                  'Q': [0,1,2]}
+  cv_best_param_file: "reports/stores_best_params_rmse.csv"
+
+final_evaluation:
+  cv_best_param_file: "reports/stores_best_params_rmse.csv"
+  numeric_featres: ["y"]
+  future_exog_file: "data/Future_exog.csv"
+  binary_features: ["Holiday_Flag", 'Month_Start_Flag',
+                     'cal_thanksgiving_w0',
+                     'cal_christmas_w-1', 'cal_christmas_w0']
+  no_weeks_test: 21
+
+  meaningful_changes: {
+                      "Temperature": 10,                
+                      "Temperature_diff_1": 10,
+                      "Fuel_Price": 0.50,  
+                      "Fuel_Price_diff_1": 0.50,
+                      "Fuel_Price_diff_2": 0.50,        
+                      "Unemployment_diff_2": 0.5,        
+                      "CPI": 1,
+                      "CPI_diff_1": 1,
+                      "CPI_diff_2": 1,
+                      "Holiday_Flag": 1,                
+                      "Month_Start_Flag": 1 ,        
+                      'cal_thanksgiving_w0':1,
+                      'cal_christmas_w-1':1,
+                      'cal_christmas_w0':1
+                     }
+  path_forecast_plot: "reports/forecast_exog_coef.pdf"
+  path_model_save: "reports/final_model"
+  path_model_runid: "Sarimax_final_model" 
+  no_weeks_forecast: 11
+
+
+store_category: 
+  path_model_save: "reports/final_model/"
+  path_group_feature: "reports/feature_boxplots_by_group.pdf"
+  path_group_dot_plt: "reports/store_groups_dot.pdf"
